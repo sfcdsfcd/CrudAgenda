@@ -1,0 +1,17 @@
+@AgendaBackend_HostAddress = http://localhost:5202
+
+### Autenticação
+POST {{AgendaBackend_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "password"
+}
+
+### Obter Contatos (Requer Autenticação)
+GET {{AgendaBackend_HostAddress}}/api/contatos
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
